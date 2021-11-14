@@ -1,0 +1,17 @@
+{
+  "name": "google-function-with-fastify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @google-cloud/functions-framework --target=fastifyFunction"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.23.1"
+  },
+  "devDependencies": {
+    "@google-cloud/functions-framework": "^2.0.0"
+  }
+}
