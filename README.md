@@ -44,7 +44,7 @@ $ gcloud functions logs read
 ## Example request form `/me` endpoint
 
 ```
-$ curl -X POST $GOOGLE_CLOUD_FUNCTION_URL/me -H "Content-Type: application/json" -d '{ "name": "World" }'
+$ curl -X POST https://$GOOGLE_REGION-$GOOGLE_PROJECT.cloudfunctions.net/me -H "Content-Type: application/json" -d '{ "name": "World" }'
 ```
 
 ## References
