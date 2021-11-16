@@ -2,12 +2,6 @@
 
 const fastify = require("fastify")({
   logger: true, // Use  logger: { level: 'info' } to set the log level
-  serverFactory: (handler, opts) => {
-    const server = require("http").createServer((req, res) => {
-      handler(req, res);
-    });
-    return server;
-  },
 });
 
 // Required https://github.com/fastify/fastify/issues/946#issuecomment-766319521
@@ -83,6 +77,9 @@ const app = async (req, res) => {
   // Wait for fastify ready
   await fastify.ready();
   // Emit request event
+  // References:
+  // - https://www.fastify.io/docs/latest/Server/#server
+  // - https://nodejs.org/api/http.html#event-request
   fastify.server.emit("request", req, res);
 };
 
